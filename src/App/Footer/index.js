@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Link from '../../components/Link';
+
 import './style.css';
 
 const Footer = () => (
@@ -12,12 +14,12 @@ const Footer = () => (
     </div>
     <div>
       <small>
-        <a
+        <Link
           className="Footer-link"
           href="https://intro-to-graphql.ryanyogan.com"
         >
           Class Materials and Portal
-        </a>{' '}
+        </Link>{' '}
         <span className="Footer-text">.</span>
       </small>
     </div>
