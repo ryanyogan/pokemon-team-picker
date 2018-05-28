@@ -5,8 +5,8 @@ import ErrorMessage from '../Error';
 const Arena = () => (
   <Fragment>
     <ErrorMessage
-      heading="Procore Battle Arena"
-      error="Ready... Fight! Once we created the Teams Section!"
+      heading="An error has occured!"
+      error="Please restart your computer thirty times for maximum results."
     />
   </Fragment>
 );

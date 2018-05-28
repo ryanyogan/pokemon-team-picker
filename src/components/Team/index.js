@@ -5,8 +5,8 @@ import ErrorMessage from '../Error';
 const Team = () => (
   <div>
     <ErrorMessage
-      heading="My Pokemon!"
-      error="We will be implementing the team page... as a team!"
+      heading="An error has occured!"
+      error="Please restart your computer thirty times for maximum results."
     />
   </div>
 );
