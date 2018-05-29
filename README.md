@@ -2,8 +2,8 @@ Welcome to "Battling Data with GraphQL & React" Dev Academy Course
 ---
 
 ### Please Start With Day 01
-* Day 01 https://ryanyogan.gitbooks.io/graphql-dev-academy/content/
-
+* Day 01 ~ Course & Homework: https://ryanyogan.gitbooks.io/graphql-dev-academy/content/
+* Day 01 ~ Project Board: https://github.com/ryanyogan/pokemon-team-picker/projects/1
 ### Running The Application
 
 * Clone the repository `git clone git@github.com:ryanyogan/pokemon-team-picker.git`
