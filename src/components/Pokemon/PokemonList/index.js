@@ -1,7 +1,7 @@
 import React from 'react';
 import { Page, Flex } from '@procore/core-react';
 
-import PokeCard from '../PokeCard';
+import PokeCard from '../PokemonCard';
 
 const PokemonList = ({ pokemons }) => (
   <Page>
