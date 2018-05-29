@@ -16,7 +16,7 @@ const Footer = () => (
       <small>
         <Link
           className="Footer-link"
-          href="https://intro-to-graphql.ryanyogan.com"
+          href="https://ryanyogan.gitbooks.io/graphql-dev-academy/content/"
         >
           Class Materials and Portal
         </Link>{' '}
