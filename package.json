@@ -2,10 +2,6 @@
   "name": "pokemon-explorer",
   "version": "0.2.0",
   "private": true,
-  "now": {
-    "name": "pokemon-explorer",
-    "alias": "pokemon-explorer.ryanyogan.com"
-  },
   "dependencies": {
     "@procore/core-react": "^4.0.3",
     "apollo-cache-inmemory": "^1.2.1",
@@ -25,9 +21,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject",
-    "deploy": "now -e NODE_ENV=production --token $NOW_TOKEN --npm",
-    "alias": "now alias --token=$NOW_TOKEN"
+    "eject": "react-scripts eject"
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
