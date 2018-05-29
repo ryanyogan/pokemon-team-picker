@@ -2,7 +2,7 @@ Welcome to "Battling Data with GraphQL & React" Dev Academy Course
 ---
 
 ### Please Start With Day 01
-* Day 01 https://intro-to-graphql.ryanyogan.com
+* Day 01 https://ryanyogan.gitbooks.io/graphql-dev-academy/content/
 
 ### Running The Application
 
