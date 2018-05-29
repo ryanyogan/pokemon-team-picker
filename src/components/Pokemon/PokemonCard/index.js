@@ -30,7 +30,7 @@ const PokemonCard = ({ name, image, classification }) => (
                   />
                   <h4 className="capitalize">{name}</h4>
                   <Modal open={isShowing} onClickOverlay={hide} placement="top">
-                    <Modal.Header onClose={hide}>{name}r</Modal.Header>
+                    <Modal.Header onClose={hide}>{name}</Modal.Header>
                     <Modal.Body>
                       <Flex direction="column">
                         <img
