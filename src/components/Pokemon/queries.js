@@ -11,4 +11,16 @@ const GET_POKEMON_QUERY = gql`
   }
 `;
 
-export { GET_POKEMON_QUERY };
+const GET_AN_ERROR_QUERY = gql`
+  {
+    pokemons(first: 10) {
+      id
+      name
+      image
+      classification
+      foobar # This better not exist! 
+    }
+  }
+`;
+
+export { GET_POKEMON_QUERY, GET_AN_ERROR_QUERY };
