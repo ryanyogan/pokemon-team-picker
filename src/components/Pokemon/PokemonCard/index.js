@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 import React from 'react';
 import { Box, Card, Flex, Modal, Button, FlexList } from '@procore/core-react';
 import { Query } from 'react-apollo';
@@ -7,9 +8,15 @@ import ErrorMessage from '../../Error';
 
 import { GET_POKEMON_QUERY } from './queries';
 
+import './style.css';
+
 const PokemonCard = ({ id, name, image }) => (
   <Box margin="md">
-    <Card variant="hoverable" style={{ width: '200px' }}>
+    <Card
+      variant="hoverable"
+      style={{ width: '200px' }}
+      className="PokemonCard"
+    >
       <Box padding="md">
         <Flex direction="column">
           <Modal.State>
@@ -55,22 +62,28 @@ const PokemonCard = ({ id, name, image }) => (
                                 }}
                               />
                             </Flex>
-                            <strong>Classification</strong>
                             <FlexList
                               size="sm"
                               direction="column"
                               alignItems="flex-start"
+                              style={{ marginBottom: '10px' }}
                             >
-                              <span>{pokemon.classification}</span>
+                              <h5>Classification</h5>
+                              <span style={{ fontSize: '10pt' }}>
+                                {pokemon.classification}
+                              </span>
                             </FlexList>
-                            <strong>Weaknesses</strong>
                             <FlexList
                               size="sm"
                               direction="column"
                               alignItems="flex-start"
+                              style={{ marginBottom: '10px' }}
                             >
+                              <h5>Weaknesses</h5>
                               {pokemon.weaknesses.map((weakness, idx) => (
-                                <span key={idx}>{weakness}</span>
+                                <span key={idx} style={{ fontSize: '10pt' }}>
+                                  {weakness}
+                                </span>
                               ))}
                             </FlexList>
                           </Modal.Body>
