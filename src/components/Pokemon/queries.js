@@ -1,5 +1,6 @@
 import gql from 'graphql-tag';
 
+// gql allows user to pass arguments
 const GET_POKEMON_QUERY = gql`
   {
     pokemons(first: 20) {
@@ -18,9 +19,17 @@ const GET_AN_ERROR_QUERY = gql`
       name
       image
       classification
-      foobar # This better not exist! 
+      foobar # This better not exist!
     }
   }
 `;
 
 export { GET_POKEMON_QUERY, GET_AN_ERROR_QUERY };
+
+// query getPokemon($id: String) {
+//   pokemon(id:$id){
+//     name
+//   }
+// }
+
+// Can pass in variable
