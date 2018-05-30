@@ -17,6 +17,7 @@ const link = new HttpLink({
 });
 
 // Takes in the link to graphql api and optional cache
+// In memory cache <-- look up
 const client = new ApolloClient({
   link,
   cache: new InMemoryCache(),

@@ -9,6 +9,9 @@ import Loading from '../Loading';
 import { GET_POKEMON_QUERY } from './queries';
 
 // render prop strategy over HOC
+// render prop pattern is where you pass in components as a prop
+// to render in the main component
+
 // can pass render or children to react component
 // <Query render=() => <div/> /> this is JUST A this.props.render in Query
 // ^ does not overwrite Query's render method
@@ -27,6 +30,8 @@ const getPokemon = gql`
 `;
 
 const Pokemon = () => (
+  // Query does the graphql querying for you that returns
+  // data, loading, and error
   <Query query={GET_POKEMON_QUERY} notifyOnNetworkStatusChange>
     {({ data, loading, error }) => {
       if (error) {
