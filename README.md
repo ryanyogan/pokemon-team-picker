@@ -4,7 +4,7 @@
 DAY-01 - Danny Ou
 ---
 What did I learn today?
-- GraphQL requests are dynamic; users can put in any acceptable attributes in ONE request.
+- GraphQL requests are flexible; users can put in any acceptable attributes in ONE request.
 - GraphQL and caching can help with state management in React. All React Components can now be Stateless components using GraphQL calls to change state; no need for Redux.
 
 What am I going to add to the app?
