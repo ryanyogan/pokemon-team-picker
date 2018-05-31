@@ -28,7 +28,7 @@ const PokemonCard = ({ id, name, image }) => (
                 />
                 <h4 className="capitalize">{name}</h4>
                 <Modal open={isShowing} onClickOverlay={hide} placement="top">
-                  {/* Why do you think we need this line below? 
+                  {/* Why do you think we need this line below? "isShowing && ("
                     What happens when you remove it? */}
                   {isShowing && (
                     <Query query={GET_POKEMON_QUERY} variables={{}}>
