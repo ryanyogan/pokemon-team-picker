@@ -34,9 +34,12 @@
   },
   "devDependencies": {
     "babel-eslint": "^8.2.3",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "eslint": "^4.19.1",
     "eslint-config-equimper": "^2.2.2",
     "eslint-config-prettier": "^2.9.0",
-    "prettier": "^1.13.0"
+    "prettier": "^1.13.0",
+    "react-apollo-async-testing": "^0.0.4"
   }
 }
