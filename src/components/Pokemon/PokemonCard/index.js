@@ -4,12 +4,12 @@ import { Box, Card, Flex } from '@procore/core-react';
 import PokemonModal from '../PokemonModal';
 import './style.css';
 
-const PokemonCard = ({ name, image }) => (
+const PokemonCard = ({ id, image, name }) => (
   <Box margin="md">
     <Card variant="hoverable" className="PokemonCard">
       <Box padding="md">
         <Flex direction="column">
-          <PokemonModal image={image} name={name} />
+          <PokemonModal id={id} image={image} name={name} />
         </Flex>
       </Box>
     </Card>
