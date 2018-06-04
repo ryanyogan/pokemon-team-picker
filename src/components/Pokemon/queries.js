@@ -4,7 +4,8 @@ import gql from 'graphql-tag';
 const GET_POKEMON_QUERY = gql`
   query getPokemon($id: String!) {
     pokemon(id: $id) {
-      name
+      classification
+      weaknesses
     }
   }
 `;
