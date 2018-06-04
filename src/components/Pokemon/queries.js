@@ -1,7 +1,16 @@
 import gql from 'graphql-tag';
 
-// gql allows user to pass arguments
+// In GraphQL, you can create a function that takes in any variable, see below
 const GET_POKEMON_QUERY = gql`
+  query getPokemon($id: String!) {
+    pokemon(id: $id) {
+      name
+    }
+  }
+`;
+
+// gql allows user to pass arguments
+const GET_POKEMONS_QUERY = gql`
   {
     pokemons(first: 20) {
       id
@@ -24,7 +33,7 @@ const GET_AN_ERROR_QUERY = gql`
   }
 `;
 
-export { GET_POKEMON_QUERY, GET_AN_ERROR_QUERY };
+export { GET_POKEMON_QUERY, GET_POKEMONS_QUERY, GET_AN_ERROR_QUERY };
 
 // query getPokemon($id: String) {
 //   pokemon(id:$id){
