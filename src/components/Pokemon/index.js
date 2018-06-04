@@ -32,6 +32,9 @@ const getPokemon = gql`
 const Pokemon = () => (
   // Query does the graphql querying for you that returns
   // data, loading, and error
+
+  // Will not get loading if you don't pass this prop notifyOnNetworkStatusChange
+  // Also gets what browsers, etc.
   <Query query={GET_POKEMON_QUERY} notifyOnNetworkStatusChange>
     {({ data, loading, error }) => {
       if (error) {

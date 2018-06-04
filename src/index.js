@@ -18,6 +18,12 @@ const link = new HttpLink({
 
 // Takes in the link to graphql api and optional cache
 // In memory cache <-- look up
+// Disabling browser cache will not disable InMemoryCache
+
+// Will not fetch on second click.
+// Can use graphql subscription
+//  but will update old cache (blackbox) and invalidate cache after a certain amount of time
+
 const client = new ApolloClient({
   link,
   cache: new InMemoryCache(),
