@@ -1,12 +1,11 @@
 import React from 'react';
 import { Query } from 'react-apollo';
-import gql from 'graphql-tag';
 
 import PokemonList from './PokemonList';
 import ErrorMessage from '../Error';
 import Loading from '../Loading';
 
-import { GET_POKEMON_QUERY } from './queries';
+import { GET_POKEMONS_QUERY } from './queries';
 
 // render prop strategy over HOC
 // render prop pattern is where you pass in components as a prop
@@ -20,22 +19,13 @@ import { GET_POKEMON_QUERY } from './queries';
 // =
 // <Query> () => <div/> </Query>
 
-// In GraphQL, you can create a function that takes in any variable, see below
-const getPokemon = gql`
-  query getPokemon($id: String!) {
-    pokemon(id: $id) {
-      name
-    }
-  }
-`;
-
 const Pokemon = () => (
   // Query does the graphql querying for you that returns
   // data, loading, and error
 
   // Will not get loading if you don't pass this prop notifyOnNetworkStatusChange
   // Also gets what browsers, etc.
-  <Query query={GET_POKEMON_QUERY} notifyOnNetworkStatusChange>
+  <Query query={GET_POKEMONS_QUERY} notifyOnNetworkStatusChange>
     {({ data, loading, error }) => {
       if (error) {
         return <ErrorMessage error={error} />;
