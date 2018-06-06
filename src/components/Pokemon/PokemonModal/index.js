@@ -17,23 +17,21 @@ const PokemonModal = ({ hide, id, image, isShowing, name }) =>
               <Modal open={isShowing} onClickOverlay={hide} placement="top">
                 <Modal.Header onClose={hide}>{name}</Modal.Header>
                 <Modal.Body>
-                  <FlexList direction="column">
+                  <FlexList direction="column" alignItems="center">
                     <img alt={name} className="PokemonModalImg" src={image} />
-                    <Fragment>
-                      <FlexList direction="column" alignItems="flex-start">
-                        <Token className="PokemonModalClassificationToken">
-                          <Token.Label>{pokemon.classification}</Token.Label>
+                    <FlexList direction="column" alignItems="flex-start">
+                      <Token className="PokemonModalClassificationToken">
+                        <Token.Label>{pokemon.classification}</Token.Label>
+                      </Token>
+                      {pokemon.weaknesses.map(weakness => (
+                        <Token
+                          key={weakness}
+                          className="PokemonModalWeaknessToken"
+                        >
+                          <Token.Label>{weakness}</Token.Label>
                         </Token>
-                        {pokemon.weaknesses.map(weakness => (
-                          <Token
-                            key={weakness}
-                            className="PokemonModalWeaknessToken"
-                          >
-                            <Token.Label>{weakness}</Token.Label>
-                          </Token>
-                        ))}
-                      </FlexList>
-                    </Fragment>
+                      ))}
+                    </FlexList>
                   </FlexList>
                 </Modal.Body>
                 <Modal.Footer>

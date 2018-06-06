@@ -8,7 +8,7 @@ const PokemonCard = ({ id, image, name }) => (
   <Box margin="md">
     <Card variant="hoverable" className="PokemonCard">
       <Box padding="md">
-        <Flex direction="column">
+        <Flex direction="column" alignItems="center">
           <Modal.State>
             {({ isShowing, show, hide }) => (
               <div>
