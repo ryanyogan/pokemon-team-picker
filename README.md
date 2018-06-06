@@ -36,3 +36,17 @@ What do I feel stuck on?
 - How are resolvers created?
 - How do subscriptions work?
 - How does the Apollo caching work?
+
+## DAY-03 - Danny Ou
+
+What did I learn today?
+
+- PTO (I read up on aliasing and mutations)
+
+What am I going to add to the app?
+
+- I'll be swapping out the API url with what Ryan provided: https://pokemon-server.ryanyogan.com/graphql
+
+What do I feel stuck on?
+
+- N/A
