@@ -10,7 +10,7 @@ import { GET_POKEMON_QUERY } from './queries';
 
 import './style.css';
 
-const PokemonCard = ({ id, name, image }) => (
+const PokemonCard = ({ id, name, img }) => (
   <Box margin="md">
     <Card
       variant="hoverable"
@@ -24,7 +24,7 @@ const PokemonCard = ({ id, name, image }) => (
               <div>
                 <img
                   alt={name}
-                  src={image}
+                  src={img}
                   style={{ height: 75, width: 75, marginBottom: 10 }}
                   onClick={show}
                 />
@@ -54,7 +54,7 @@ const PokemonCard = ({ id, name, image }) => (
                             <Flex direction="column">
                               <img
                                 alt={name}
-                                src={image}
+                                src={img}
                                 style={{
                                   height: 100,
                                   width: 100,
@@ -80,11 +80,6 @@ const PokemonCard = ({ id, name, image }) => (
                               style={{ marginBottom: '10px' }}
                             >
                               <h5>Weaknesses</h5>
-                              {pokemon.weaknesses.map((weakness, idx) => (
-                                <span key={idx} style={{ fontSize: '10pt' }}>
-                                  {weakness}
-                                </span>
-                              ))}
                             </FlexList>
                           </Modal.Body>
                         );
