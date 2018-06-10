@@ -1,19 +1,23 @@
 import React from 'react';
-import { Page, Flex } from '@procore/core-react';
+import { Flex, Page } from '@procore/core-react';
 
 import PokemonCard from '../PokemonCard';
+import TeamSidebar from '../TeamSidebar';
+
+import './style.css';
 
 const PokemonList = ({ pokemons }) => (
-  <Page>
-    <Page.Body>
-      <div style={{ width: '100%' }}>
-        <Flex style={{ flexWrap: 'wrap', justifyContent: 'center' }}>
+  <Page className="PageHeight">
+    <Page.Body className="PageBody">
+      <div>
+        <Flex direction="row" wrap="wrap">
           {pokemons.map(pokemon => (
             <PokemonCard key={pokemon.id} {...pokemon} />
           ))}
         </Flex>
       </div>
     </Page.Body>
+    <TeamSidebar />
   </Page>
 );
 

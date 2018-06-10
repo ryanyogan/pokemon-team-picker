@@ -29,7 +29,7 @@ const GET_POKEMON_QUERY = gql`
 
 const GET_POKEMONS_QUERY = gql`
   {
-    pokemons: allPokemons(limit: 50) {
+    pokemons: allPokemons(limit: 25) {
       id
       name
       img
