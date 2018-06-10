@@ -1,5 +1,8 @@
 import React from 'react';
-import { Button, Page, Sidebar } from '@procore/core-react';
+import { Page, Sidebar } from '@procore/core-react';
+
+import TeamCreate from './TeamCreate';
+import TeamSelect from './TeamSelect';
 
 const TeamSidebar = () => (
   <Page.SidebarState>
@@ -8,12 +11,8 @@ const TeamSidebar = () => (
         <Sidebar.Content collapsed={!isShowing}>
           <Sidebar.Panel>
             <Sidebar.ButtonList>
-              <Button variant="primary" size="block">
-                + Select Team
-              </Button>
-              <Button variant="primary" size="block">
-                + Create Team
-              </Button>
+              <TeamCreate />
+              <TeamSelect />
             </Sidebar.ButtonList>
             <Sidebar.Divider />
           </Sidebar.Panel>
