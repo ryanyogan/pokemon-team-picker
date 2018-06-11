@@ -50,3 +50,17 @@ What am I going to add to the app?
 What do I feel stuck on?
 
 - N/A
+
+## DAY-04 - Danny Ou
+
+What did I learn today?
+
+- PTO
+
+What am I going to add to the app?
+
+- I'll be adding a sidebar to handle adding Pokemon to Team using Apollo Mutation
+
+What do I feel stuck on?
+
+- I still need a little bit of time to wire in Apollo Mutation into my Application. I'm not too sure where to put the Mutation Component...
