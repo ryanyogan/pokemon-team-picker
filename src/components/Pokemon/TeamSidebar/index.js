@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, Page, Sidebar } from '@procore/core-react';
 
 import TeamSelect from './TeamSelect';
+import PokemonCard from '../PokemonCard';
 
 const TeamSidebar = ({ onTeamSelect, team }) => (
   <Page.SidebarState>
@@ -23,6 +24,14 @@ const TeamSidebar = ({ onTeamSelect, team }) => (
                 {team.id ? team.name : 'No Team Selected'}
               </Sidebar.Header>
             </Sidebar.PanelTitle>
+
+            <Sidebar.Menu>
+              {team.pokemons.map(pokemon => (
+                <Sidebar.MenuItem key={pokemon.id}>
+                  {pokemon.name}
+                </Sidebar.MenuItem>
+              ))}
+            </Sidebar.Menu>
           </Sidebar.Panel>
         </Sidebar.Content>
         <Sidebar.FooterButton onClick={toggle} collapsed={!isShowing}>

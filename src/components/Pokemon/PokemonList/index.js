@@ -27,13 +27,16 @@ const initialState = ({ pokemons }) => ({
   team: { name: '', pokemons: [] },
 });
 const stateHandlers = {
-  onTeamSelect: () => team => ({
-    team: {
-      id: team.id,
-      name: team.name,
-      pokemons: team.pokemons,
-    },
-  }),
+  onTeamSelect: () => team => {
+    console.log('Team Selected', team);
+    return {
+      team: {
+        id: team.id,
+        name: team.name,
+        pokemons: team.pokemons,
+      },
+    };
+  },
 };
 
 export default compose(withStateHandlers(initialState, stateHandlers))(
