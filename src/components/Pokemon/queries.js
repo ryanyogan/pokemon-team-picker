@@ -29,10 +29,38 @@ const GET_POKEMON_QUERY = gql`
 
 const GET_POKEMONS_QUERY = gql`
   {
-    pokemons: allPokemons(limit: 50) {
+    pokemons: allPokemons(limit: 25) {
       id
       name
       img
+    }
+  }
+`;
+
+const GET_TEAMS_QUERY = gql`
+  {
+    allTeams {
+      id
+      name
+      pokemons {
+        id
+        name
+        img
+      }
+    }
+  }
+`;
+
+const UPDATE_TEAMS_MUTATION = gql`
+  mutation updateTeam($id: ID!, $name: String!, $pokemons: Pokemons!) {
+    updateTeam(input: { id: $id, name: $name, pokemons: $pokemons }) {
+      id
+      name
+      pokemons {
+        id
+        name
+        img
+      }
     }
   }
 `;
@@ -49,4 +77,10 @@ const GET_AN_ERROR_QUERY = gql`
   }
 `;
 
-export { GET_POKEMON_QUERY, GET_POKEMONS_QUERY, GET_AN_ERROR_QUERY };
+export {
+  GET_TEAMS_QUERY,
+  GET_POKEMON_QUERY,
+  GET_POKEMONS_QUERY,
+  GET_AN_ERROR_QUERY,
+  UPDATE_TEAMS_MUTATION,
+};
