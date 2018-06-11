@@ -37,6 +37,20 @@ const GET_POKEMONS_QUERY = gql`
   }
 `;
 
+const GET_TEAMS_QUERY = gql`
+  {
+    allTeams {
+      id
+      name
+      pokemons {
+        id
+        name
+        img
+      }
+    }
+  }
+`;
+
 const GET_AN_ERROR_QUERY = gql`
   {
     pokemons(first: 10) {
@@ -49,4 +63,9 @@ const GET_AN_ERROR_QUERY = gql`
   }
 `;
 
-export { GET_POKEMON_QUERY, GET_POKEMONS_QUERY, GET_AN_ERROR_QUERY };
+export {
+  GET_TEAMS_QUERY,
+  GET_POKEMON_QUERY,
+  GET_POKEMONS_QUERY,
+  GET_AN_ERROR_QUERY,
+};

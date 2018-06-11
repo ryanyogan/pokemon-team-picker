@@ -6,6 +6,8 @@ import TeamSidebar from '../TeamSidebar';
 
 import './style.css';
 
+const onTeamSelect = () => console.log('Team Selected');
+
 const PokemonList = ({ pokemons }) => (
   <Page className="PageHeight">
     <Page.Body className="PageBody">
@@ -17,7 +19,7 @@ const PokemonList = ({ pokemons }) => (
         </Flex>
       </div>
     </Page.Body>
-    <TeamSidebar />
+    <TeamSidebar onTeamSelect={onTeamSelect} />
   </Page>
 );
 

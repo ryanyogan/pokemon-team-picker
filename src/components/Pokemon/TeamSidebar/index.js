@@ -1,18 +1,19 @@
 import React from 'react';
-import { Page, Sidebar } from '@procore/core-react';
+import { Button, Page, Sidebar } from '@procore/core-react';
 
-import TeamCreate from './TeamCreate';
 import TeamSelect from './TeamSelect';
 
-const TeamSidebar = () => (
+const TeamSidebar = ({ onTeamSelect }) => (
   <Page.SidebarState>
     {({ isShowing, toggle }) => (
       <Page.Sidebar collapsed={!isShowing}>
         <Sidebar.Content collapsed={!isShowing}>
           <Sidebar.Panel>
             <Sidebar.ButtonList>
-              <TeamCreate />
-              <TeamSelect />
+              <Button variant="primary" size="block" disabled>
+                Create Team
+              </Button>
+              <TeamSelect onTeamSelect={onTeamSelect} />
             </Sidebar.ButtonList>
             <Sidebar.Divider />
           </Sidebar.Panel>
