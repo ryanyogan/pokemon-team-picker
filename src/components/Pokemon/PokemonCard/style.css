@@ -1,0 +1,10 @@
+.PokemonCard {
+  width: 200px;
+}
+
+.PokemonCardImg {
+  cursor: pointer;
+  height: 75px;
+  width: 75px;
+  margin-bottom: 10px;
+}

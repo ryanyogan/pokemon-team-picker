@@ -11,7 +11,7 @@
 
 .App-content_large-header,
 .App-content_small-header {
-  margin-top: 54px;
+  margin-top: 20px;
 }
 
 @media only screen and (max-device-width: 480px) {
