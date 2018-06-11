@@ -4,7 +4,12 @@ import { Button, List, Modal } from '@procore/core-react';
 
 import { GET_TEAMS_QUERY } from '../../queries';
 
-const TeamSelection = ({ onTeamSelect }) => (
+const handleOnClick = ({ hide, team, onTeamSelect }) => event => {
+  hide();
+  onTeamSelect(team);
+};
+
+const TeamSelection = ({ onTeamSelect, hide }) => (
   <Query query={GET_TEAMS_QUERY}>
     {({ data, loading, error }) => {
       const { allTeams } = data;
@@ -12,7 +17,10 @@ const TeamSelection = ({ onTeamSelect }) => (
         return (
           <List>
             {allTeams.map(team => (
-              <List.Item key={team.id} onClick={onTeamSelect}>
+              <List.Item
+                key={team.id}
+                onClick={handleOnClick({ hide, onTeamSelect, team })}
+              >
                 {team.name}
               </List.Item>
             ))}
@@ -34,7 +42,9 @@ const TeamSelect = ({ onTeamSelect }) => (
         <Modal open={isShowing} onClickOverlay={hide}>
           <Modal.Header onClose={hide}>Select Team</Modal.Header>
           <Modal.Body>
-            {isShowing && <TeamSelection onTeamSelect={onTeamSelect} />}
+            {isShowing && (
+              <TeamSelection onTeamSelect={onTeamSelect} hide={hide} />
+            )}
           </Modal.Body>
         </Modal>
       </div>

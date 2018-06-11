@@ -1,14 +1,13 @@
 import React from 'react';
 import { Flex, Page } from '@procore/core-react';
+import { compose, withStateHandlers } from 'recompose';
 
 import PokemonCard from '../PokemonCard';
 import TeamSidebar from '../TeamSidebar';
 
 import './style.css';
 
-const onTeamSelect = () => console.log('Team Selected');
-
-const PokemonList = ({ pokemons }) => (
+const PokemonList = ({ onTeamSelect, pokemons, team }) => (
   <Page className="PageHeight">
     <Page.Body className="PageBody">
       <div>
@@ -19,8 +18,24 @@ const PokemonList = ({ pokemons }) => (
         </Flex>
       </div>
     </Page.Body>
-    <TeamSidebar onTeamSelect={onTeamSelect} />
+    <TeamSidebar onTeamSelect={onTeamSelect} team={team} />
   </Page>
 );
 
-export default PokemonList;
+const initialState = ({ pokemons }) => ({
+  pokemons,
+  team: { name: '', pokemons: [] },
+});
+const stateHandlers = {
+  onTeamSelect: () => team => ({
+    team: {
+      id: team.id,
+      name: team.name,
+      pokemons: team.pokemons,
+    },
+  }),
+};
+
+export default compose(withStateHandlers(initialState, stateHandlers))(
+  PokemonList,
+);

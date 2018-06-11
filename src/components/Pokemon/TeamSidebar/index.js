@@ -3,7 +3,7 @@ import { Button, Page, Sidebar } from '@procore/core-react';
 
 import TeamSelect from './TeamSelect';
 
-const TeamSidebar = ({ onTeamSelect }) => (
+const TeamSidebar = ({ onTeamSelect, team }) => (
   <Page.SidebarState>
     {({ isShowing, toggle }) => (
       <Page.Sidebar collapsed={!isShowing}>
@@ -19,7 +19,9 @@ const TeamSidebar = ({ onTeamSelect }) => (
           </Sidebar.Panel>
           <Sidebar.Panel>
             <Sidebar.PanelTitle>
-              <Sidebar.Header>Team's Pokemons</Sidebar.Header>
+              <Sidebar.Header>
+                {team.id ? team.name : 'No Team Selected'}
+              </Sidebar.Header>
             </Sidebar.PanelTitle>
           </Sidebar.Panel>
         </Sidebar.Content>
