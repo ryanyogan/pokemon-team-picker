@@ -1,15 +1,20 @@
 import React from 'react';
-import { Query } from 'react-apollo';
+import { Mutation, Query } from 'react-apollo';
 import { Button, FlexList, Modal, Token } from '@procore/core-react';
 
-import { GET_POKEMON_QUERY } from '../queries';
+import { GET_POKEMON_QUERY, UPDATE_TEAMS_MUTATION } from '../queries';
 
 import './style.css';
 
 const returnWeaknesses = damages =>
   Object.keys(damages).filter(type => damages[type] > 1);
 
-const PokemonModal = ({ hide, id, img, isShowing, name }) =>
+const handleOnClick = ({ addPokemon, hide, pokemon }) => event => {
+  addPokemon(pokemon);
+  hide();
+};
+
+const PokemonModal = ({ addPokemon, hide, id, img, isShowing, name }) =>
   isShowing && (
     <Query query={GET_POKEMON_QUERY} variables={{ id }}>
       {({ data, error }) => {
@@ -42,7 +47,14 @@ const PokemonModal = ({ hide, id, img, isShowing, name }) =>
                     <Button variant="tertiary" onClick={hide}>
                       Cancel
                     </Button>
-                    <Button variant="primary" onClick={hide}>
+                    <Button
+                      variant="primary"
+                      onClick={handleOnClick({
+                        addPokemon,
+                        hide,
+                        pokemon: { ...pokemon, id, img, name },
+                      })}
+                    >
                       Add To Team
                     </Button>
                   </Modal.FooterButtons>

@@ -51,6 +51,20 @@ const GET_TEAMS_QUERY = gql`
   }
 `;
 
+const UPDATE_TEAMS_MUTATION = gql`
+  mutation updateTeam($id: ID!, $name: String!, $pokemons: Pokemons!) {
+    updateTeam(input: { id: $id, name: $name, pokemons: $pokemons }) {
+      id
+      name
+      pokemons {
+        id
+        name
+        img
+      }
+    }
+  }
+`;
+
 const GET_AN_ERROR_QUERY = gql`
   {
     pokemons(first: 10) {
@@ -68,4 +82,5 @@ export {
   GET_POKEMON_QUERY,
   GET_POKEMONS_QUERY,
   GET_AN_ERROR_QUERY,
+  UPDATE_TEAMS_MUTATION,
 };
