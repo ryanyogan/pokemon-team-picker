@@ -1,5 +1,15 @@
 import gql from 'graphql-tag';
 
+const fragments = {
+  pokemon: gql`
+    fragment PokemonInfo on Pokemon {
+      id
+      name
+      img
+    }
+  `,
+};
+
 const GET_POKEMON_QUERY = gql`
   query getPokemon($id: ID!) {
     pokemon: Pokemon(id: $id) {
@@ -30,11 +40,10 @@ const GET_POKEMON_QUERY = gql`
 const GET_POKEMONS_QUERY = gql`
   {
     pokemons: allPokemons(limit: 25) {
-      id
-      name
-      img
+      ...PokemonInfo
     }
   }
+  ${fragments.pokemon}
 `;
 
 const GET_TEAMS_QUERY = gql`
@@ -43,12 +52,11 @@ const GET_TEAMS_QUERY = gql`
       id
       name
       pokemons {
-        id
-        name
-        img
+        ...PokemonInfo
       }
     }
   }
+  ${fragments.pokemon}
 `;
 
 const UPDATE_TEAMS_MUTATION = gql`
@@ -57,12 +65,11 @@ const UPDATE_TEAMS_MUTATION = gql`
       id
       name
       pokemons {
-        id
-        name
-        img
+        ...PokemonInfo
       }
     }
   }
+  ${fragments.pokemon}
 `;
 
 const GET_AN_ERROR_QUERY = gql`
