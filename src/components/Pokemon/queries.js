@@ -60,8 +60,8 @@ const GET_TEAMS_QUERY = gql`
 `;
 
 const UPDATE_TEAMS_MUTATION = gql`
-  mutation updateTeam($id: ID!, $name: String!, $pokemons: Pokemons!) {
-    updateTeam(input: { id: $id, name: $name, pokemons: $pokemons }) {
+  mutation updateTeam($input: UpdateTeam!) {
+    updateTeam(input: $input) {
       id
       name
       pokemons {

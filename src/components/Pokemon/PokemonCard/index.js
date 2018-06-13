@@ -4,7 +4,7 @@ import { Box, Card, Flex, Modal } from '@procore/core-react';
 import PokemonModal from '../PokemonModal';
 import './style.css';
 
-const PokemonCard = ({ addPokemon, id, img, name }) => (
+const PokemonCard = ({ addPokemon, id, img, name, team }) => (
   <Box margin="md">
     <Card variant="hoverable" className="PokemonCard">
       <Box padding="md">
@@ -25,6 +25,7 @@ const PokemonCard = ({ addPokemon, id, img, name }) => (
                   id={id}
                   img={img}
                   isShowing={isShowing}
+                  team={team}
                   name={name}
                 />
               </div>

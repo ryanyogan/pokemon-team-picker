@@ -22,6 +22,7 @@ const PokemonList = ({
             <PokemonCard
               addPokemon={addPokemon}
               key={pokemon.id}
+              team={team}
               {...pokemon}
             />
           ))}
